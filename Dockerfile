@@ -8,3 +8,5 @@ RUN \
         && curl -O https://get.helm.sh/helm-v3.5.3-linux-amd64.tar.gz --insecure \
         && tar -xf helm-*.tar.gz \
         && mv ./linux-amd64/helm /usr/local/bin
+
+ENTRYPOINT ["/bin/sh", "-c"]
