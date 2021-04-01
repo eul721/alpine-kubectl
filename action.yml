@@ -1,0 +1,15 @@
+# action.yml
+name: 'Alpine Kubectl'
+description: 'Small image with kubectl'
+inputs:
+  command:
+    description: 'Command to run'
+    required: true
+outputs:
+  result:
+    description: 'stdout'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
