@@ -59,4 +59,6 @@ RUN helm plugin install https://github.com/helm/helm-2to3
 ENV VALS_VERSION=0.14.0
 ENV VALS_URL=https://github.com/variantdev/vals/releases/download/v${VALS_VERSION}/vals_${VALS_VERSION}_linux_amd64.tar.gz
 RUN curl -sL ${VALS_URL} | tar zx -C /usr/local/bin vals
+
+RUN helm env
 ENTRYPOINT ["/bin/sh", "-c"]
