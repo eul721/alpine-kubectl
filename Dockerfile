@@ -7,7 +7,8 @@ RUN \
         && mv ./kubectl /usr/local/bin \
         && curl -O https://get.helm.sh/helm-v3.4.2-linux-amd64.tar.gz --insecure \
         && tar -xf helm-*.tar.gz \
-        && mv ./linux-amd64/helm /usr/local/bin \
-	&& helm plugin install https://github.com/databus23/helm-diff
+        && mv ./linux-amd64/helm /usr/local/bin
+ENV HELM_PLUGIN_DIR /.helm/plugins/helm-diff
+RUN helm plugin install https://github.com/databus23/helm-diff
 
 ENTRYPOINT ["/bin/sh", "-c"]
