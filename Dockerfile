@@ -9,6 +9,7 @@ RUN \
         && tar -xf helm-*.tar.gz \
         && mv ./linux-amd64/helm /usr/local/bin
 ENV HELM_PLUGIN_DIR /.helm/plugins/helm-diff
+RUN mkdir /tmp
 RUN helm plugin install https://github.com/databus23/helm-diff
 
 ENTRYPOINT ["/bin/sh", "-c"]
